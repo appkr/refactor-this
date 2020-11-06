@@ -1,0 +1,28 @@
+@startuml
+
+class App {}
+
+class TranscoderFactory {
+  + getInstance(String transcoder):Transcoder
+}
+
+class TranscodingService {
+  - transcoder:Transcoder
+  + transcode(input:String):String
+}
+
+interface Transcoder {
+  + transcode(input:String):String
+}
+
+class ReverseTranscoder implements Transcoder {
+}
+
+class ShuffleTranscoder implements Transcoder {
+}
+
+App -> TranscoderFactory
+App --> TranscodingService
+TranscodingService --> Transcoder
+
+@enduml
