@@ -16,6 +16,40 @@ public class LogEntry {
     this.output = output;
   }
 
+  public LogEntry() {}
+
+  public LocalDateTime getDateTime() {
+    return dateTime;
+  }
+
+  public void setDateTime(LocalDateTime dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  public String getInput() {
+    return input;
+  }
+
+  public void setInput(String input) {
+    this.input = input;
+  }
+
+  public String getTranscoder() {
+    return transcoder;
+  }
+
+  public void setTranscoder(String transcoder) {
+    this.transcoder = transcoder;
+  }
+
+  public String getOutput() {
+    return output;
+  }
+
+  public void setOutput(String output) {
+    this.output = output;
+  }
+
   @Override
   public String toString() {
     return "LogEntry{" +

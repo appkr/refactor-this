@@ -8,7 +8,8 @@ public class App {
 
   public static void main(String[] args) throws IOException {
 
-    final Logger logger = new Logger();
+//    final InMemoryLogger logger = new InMemoryLogger();
+    final FileLogger logger = new FileLogger();
     final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     while (true) {
@@ -29,6 +30,7 @@ public class App {
         output = new TranscodingService(TranscoderFactory.getInstance(transcoder)).transcode(input);
         logger.log(input, transcoder, output);
       } catch (Exception e) {
+        e.printStackTrace();
         error(e.getMessage());
         continue;
       }
